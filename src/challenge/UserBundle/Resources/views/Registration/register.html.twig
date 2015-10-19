@@ -1,0 +1,15 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{%  block header %}
+
+    <div id="header" class="jumbotron">
+           <h1>S'inscire</h1>
+        <h3 class="text-center">
+            Veuillez remplir les champs vides afins de vous inscrire
+        </h3>
+
+    </div>
+
+{%  endblock %}
+{% block fos_user_content %}
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+{% endblock fos_user_content %}

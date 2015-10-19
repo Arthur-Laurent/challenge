@@ -1,0 +1,94 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="form-group">
+            {{ form_label(form.email,'Adresse email',{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.email) is empty %}
+                <div class="form-group">
+                    <div class="input-group">
+                    <span class="input-group-addon">@</span>
+
+                    {{ form_widget(form.email,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                </div>
+            {% else %}
+                {{ form_errors(form.email) }}
+                <div class="form-group has-error has-feedback ">
+
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+
+                        {{ form_widget(form.email,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+            {{ form_label(form.username,"Nom d'utilisateur",{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.username) is empty %}
+                <div class="form-group ">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    {{ form_widget(form.username,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                </div>
+            {% else %}
+                {{ form_errors(form.username) }}
+                <div class="form-group has-error has-feedback ">
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        {{ form_widget(form.username,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+            {{ form_label(form.plainPassword.first,"Mot de passe",{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.plainPassword.first) is empty %}
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        {{ form_widget(form.plainPassword.first,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+
+                </div>
+                {{ form_label(form.plainPassword.second,"Mot de passe comfirmation",{ 'label_attr' :{'class':'control-label'}}) }}
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        {{ form_widget(form.plainPassword.second,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                </div>
+            {% else %}
+                {{ form_errors(form.plainPassword.first) }}
+                <div class="form-group has-error has-feedback ">
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        {{ form_widget(form.plainPassword.first,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
+                </div>
+                {{ form_label(form.plainPassword.second,"Mot de passe comfirmation",{ 'label_attr' :{'class':'control-label'}}) }}
+                <div class="form-group has-error has-feedback ">
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        {{ form_widget(form.plainPassword.second,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+            {{ form_rest(form) }}
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <button class="btn-success btn btn-lg" type="submit" ><i class="fa fa-bolt"></i>  S'inscrire</button>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+            </div>
+        </form>
+    </div>
+</div>

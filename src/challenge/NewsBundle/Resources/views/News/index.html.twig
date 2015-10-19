@@ -1,0 +1,47 @@
+{% extends "challengeNewsBundle::layout.html.twig" %}
+
+{% block title %}
+    News
+{% endblock %}
+{% block news %}
+    <div id="titrep" class="col-lg-7 col-lg-offset-2">
+    {% for new in news %}
+    <div class="gpost">
+        <div class="post-head">
+            <h3><a href="single-blog.html">{{ new.title }}</a></h3>
+            <div class="post-meta">
+                <div><i class="fa fa-user"></i>AUTEUR : <a href="#">{{ new.author }}</a></div>
+                <div><i class="fa fa-clock-o"></i>{{ new.date | localizeddate('full', 'none') }}</div>
+                <div><i class="fa fa-comments"></i><a href="#">22 Commentaires</a></div>
+                <div><i class="fa fa-folder-open"></i>Category : <a href="#">Hack</a>, <a href="#">lobby</a></div>
+                <div><i class="fa fa-heart"></i><a href="#">77</a></div>
+            </div><!-- End post-meta -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="post-wrap">
+
+            <div class="post-inner">
+                <p>{{ new.content }}</p>
+                <div class="clearfix"></div>
+                <div class="post-share-view">
+                    <div class="post-meta">
+
+                        <div class="post-meta-share">
+                            <div><i class="fa fa-eye"></i><span>145 </span>Vues</div>
+                            <div>  <i class="fa fa-share-alt"></i>
+                                <a href="#">Partager</a> </div>
+
+
+
+                        </div>
+
+                    </div><!-- End post-share-view -->
+                    <div class="clearfix"></div>
+                </div><!-- End post-inner -->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+        </div>
+{% endblock %}

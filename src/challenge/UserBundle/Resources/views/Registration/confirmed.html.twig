@@ -1,0 +1,14 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4">
+        <label class="control-label text-center">Félicitations {{ user.username }}, votre compte à bien été créé un email va vous etre envoyer afin de l'activer.</label>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+        </div>
+    </div>
+{% endblock fos_user_content %}

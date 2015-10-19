@@ -1,0 +1,145 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block header %}
+    <div id="header" class="jumbotron">
+
+        <h3 class="text-center">
+            Veuilliez entrer vos identifiants de connexions :
+        </h3>
+
+    </div>
+{% endblock %}
+{% block fos_user_content %}
+
+    {% if error %}
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-2 ">
+                        <h3 class="text-center text-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</h3>
+                    </div>
+                </div>
+                <form class="form-group" action="{{ path("fos_user_security_check") }}" method="post">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                <div class="form-group has-error has-feedback">
+                    <label for="username" class="control-label">{{ 'security.login.username'|trans }}:</label>
+                    <div class="input-group">
+
+
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" id="username" name="_username" value="{{ last_username }}"
+                               required="required"/>
+
+
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-error has-feedback">
+                    <label for="password" class="control-label">{{ 'security.login.password'|trans }}:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input class="form-control" type="password" id="password" name="_password" required="required"/>
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                <label id="formpe" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                    <a href="{{ path('fos_user_resetting_request') }}" >Mot de passe oublié ?</a>
+
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-success btn-lg" type="submit" id="_submit" name="_submit"><i class="fa fa-get-pocket"></i> Connexion</button>
+
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-2"></div>
+                </div>
+
+            </form>
+                <div class="col-lg-6">
+                        <a class="btn btn-block btn-social btn-google">
+                            <i class="fa fa-google"></i> Se connecter avec google
+                        </a>
+                    </div>
+                <div class="col-lg-6">
+                <a class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i> Se connecter avec facebook </a>
+                    </div>
+                </div>
+            <div class="col-lg-4"></div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+
+                <div class="row">
+
+
+                    <form class="form-group" action="{{ path("fos_user_security_check") }}" method="post">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                        <div class="form-group ">
+                            <label for="username" class="control-label">{{ 'security.login.username'|trans }}:</label>
+                            <div class="input-group">
+
+
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input class="form-control" id="username" name="_username" value="{{ last_username }}"
+                                       required="required"/>
+
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="password" class="control-label">{{ 'security.login.password'|trans }}:</label>
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input class="form-control" type="password" id="password" name="_password" required="required"/>
+                            </div>
+
+
+
+                        </div>
+
+
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                        <label id="formp" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                        <a href="{{ path('fos_user_resetting_request') }}" >Mot de passe oublié ?</a>
+
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-success btn-lg" type="submit" id="_submit" name="_submit"><i class="fa fa-get-pocket"></i> Connexion</button>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-2"></div>
+                        </div>
+
+                    </form>
+
+
+                    <div class="col-lg-6">
+                        <a class="btn btn-block btn-social btn-google">
+                            <i class="fa fa-google"></i> Se connecter avec google
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i> Se connecter avec facebook </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    {% endif %}
+
+
+{% endblock fos_user_content %}

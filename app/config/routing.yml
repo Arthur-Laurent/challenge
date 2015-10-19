@@ -1,0 +1,16 @@
+challenge_news:
+    resource: "@challengeNewsBundle/Resources/config/routing.yml"
+    prefix:   /news
+
+challenge_user:
+    resource: "@challengeUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+challenge_l:
+    resource: "@challengeLBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: /user
+

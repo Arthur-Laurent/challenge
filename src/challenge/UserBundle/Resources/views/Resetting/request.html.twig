@@ -1,0 +1,15 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{%  block header %}
+
+        <div id="header" class="jumbotron">
+
+            <h3 class="text-center">
+                Un email va vous etre envoyer afin que vous puissiez réinitialiser votre mot de passe
+            </h3>
+
+        </div>
+    
+{%  endblock %}
+{% block fos_user_content %}
+{% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+{% endblock fos_user_content %}

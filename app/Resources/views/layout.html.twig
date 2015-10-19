@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>
+    {% block title %}
+    Accueil
+    {% endblock %}
+    </title>
+
+
+    {%  block stylesheet %}
+        <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
+        <link href="{{ asset("css/bootstrap-social.css") }}" rel="stylesheet">
+        <link href="{{ asset("css/app.css") }}" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    {% endblock  %}
+
+</head>
+<body>
+
+    <section id="container" class="">
+        <div class="header dark-bg">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <div class="toggle-nav">
+                                <boutton class="btn" data-original-title="Toggle Navigation" data-placement="bottom"><i class="fa fa-bars fa-3x"></i></boutton>
+                        </div>
+
+                        <a class="navbar-brand" href="{{ path('challenge_l_homepage') }}">Accueil</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" >
+                        <ul id="nav1" class="nav navbar-nav navbar-right">
+
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                {{ render(controller("challengeUserBundle:navbar:menu")) }}
+                            {% else %}
+                                <li><a href="{{ path('fos_user_registration_register') }}" class="btn btn-danger navbar-btn" >S'inscrire</a></li>
+
+                                <li><a type="button" href="{{ path('fos_user_security_login') }}" class="btn btn-success navbar-btn btn-circle">Login</a></li>
+                            {% endif %}
+
+
+
+
+
+
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+
+                </div><!-- /.container-fluid -->
+            </nav>
+
+
+        </div>
+        <aside>
+            <div id="sidebar"  class="nav-collapse ">
+                <ul class="sidebar-menu">
+                    <li class="sub-menu">
+                        <a class="" href="{{ path('challenge_news_homepage') }}">
+                            <i class="fa fa-info-circle"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="fa fa-desktop"></i>
+                            <span>Forum</span>
+                        </a>
+
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="fa fa-cogs"></i>
+                            <span>Challenge Lobby</span>
+
+                        </a>
+                    </li>
+
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div id="content" class="col-lg-12">
+                    {% block header %}
+                    {% endblock %}
+                    </div>
+                 <div class="row">
+                        {% block body %}
+
+                        {% endblock %}
+                </div>
+
+            </section>
+        </section>
+        <div class="footer" id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-2">
+                        <h2>Informations:</h2>
+
+                    </div>
+
+                    <div class="col-lg-2 col-lg-offset-1">
+                        <h2>Notre entrepôt</h2>
+                        <p><i class="icon-map-marker"></i>&nbsp;</p>
+                    </div>
+
+                    <div class="col-lg-2 col-lg-offset-1 ">
+                        <h2>Nous contacter</h2>
+                        <p><i class="icon-phone"></i>&nbsp;Tel:0605080851 </p>
+                        <p><i class="icon-print"></i>&nbsp;Fax:5121550515 </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <p>&copy; Copyright {{ "now"|date('Y') }} - Arthur</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+{% block javascripts %}
+    <script src="{{ asset("js/jquery-1.11.3.min .js") }}"></script>
+    <script src="{{ asset("js/bootstrap.min.js") }}"></script>
+    <script>   jQuery('.toggle-nav').click(function () {
+            if (jQuery('#sidebar > ul').is(":visible") === true) {
+                jQuery('#main-content').css({
+                    'margin-left': '0px'
+                });
+                jQuery('#sidebar').css({
+                    'margin-left': '-180px'
+                });
+                jQuery('#sidebar > ul').hide();
+                jQuery("#container").addClass("sidebar-closed");
+            } else {
+                jQuery('#main-content').css({
+                    'margin-left': '180px'
+                });
+                jQuery('#sidebar > ul').show();
+                jQuery('#sidebar').css({
+                    'margin-left': '0'
+                });
+                jQuery("#container").removeClass("sidebar-closed");
+            }
+        });</script>
+
+{% endblock %}
+</body>
+</html>
