@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/config/parameters.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Registration/confirmed.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Resetting/request.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Security/login.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/navbar/menu.html.twig" charset="UTF-8" />
+  </component>
+</project>
