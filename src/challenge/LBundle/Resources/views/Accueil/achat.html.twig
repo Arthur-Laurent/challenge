@@ -1,0 +1,36 @@
+{%  extends "challengeLBundle::layout.html.twig" %}
+{% block index %}
+    <div class="col-lg-12 text-center">
+
+        <!-- START THE FEATURETTES -->
+       <b><h1>Veuillez sélectionner votre méthode de paiement :</h1><br><br><br>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="img-circle" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSXwaLptJHKDCz3EtmOIl6ziVufRNJeFylpfMLR5KkmaK_31RzUWh6wjeQ" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Paypal (recommandé)</h2>
+                        <p>Simple, rapide, et sécurisée !</p><br><br>
+                        <p><a class="btn btn-default" href="{{ path('challenge_l_pp')     }}" role="button">Suivant »</a></p>
+
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="img-circle" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSqVk5ujWH6e9dwIBZtckNNMWAHblr-L0lcTD8ddPbyRfoLG0n1rrkj_JUkFA" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Appels surtaxés</h2>
+                        <p>Cette méthode est tout aussi simple d'utilisation que PayPal, mais peut parfois  être hors de prix en raison de la commission accordée   à youpass</p>
+                        <p><a class="btn btn-default" href="{{ path("challenge_l_yp") }}" role="button">Suivant »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="img-circle" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTTXM0hpOnyzHaI8UBN7osRt-Pa_YtLpzTlO8F73J_duCCoqS6mGo-_WRs" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Virement banquaire</h2>
+                        <p>Cette méthode de paiement nécéssite un contact avec notre support, et présente ainsi certains délais ...</p>
+                        <p><a class="btn btn-default" href="{{ path("challenge_l_virement") }}" role="button">Suivant »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+
+                <br><br><br><br>
+
+            </b>
+
+
+
+    </div>
+{% endblock %}

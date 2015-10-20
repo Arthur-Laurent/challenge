@@ -1,3 +1,18 @@
 challenge_l_homepage:
     path:     /
     defaults: { _controller: challengeLBundle:Accueil:index }
+challenge_l_achat:
+    path:     /lobby
+    defaults: { _controller: challengeLBundle:Accueil:challenge }
+challenge_l_faq:
+    path:     /faq
+    defaults: { _controller: challengeLBundle:Accueil:faq }
+challenge_l_pp:
+        path:     /paypal
+        defaults: { _controller: challengeLBundle:Accueil:paypal }
+challenge_l_virement:
+        path:     /virement
+        defaults: { _controller: challengeLBundle:Accueil:virement }
+challenge_l_yp:
+        path:     /youpass
+        defaults: { _controller: challengeLBundle:Accueil:youpass }

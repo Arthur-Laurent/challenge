@@ -14,6 +14,27 @@ class AccueilController extends Controller
     {
         return $this->render('challengeLBundle:Accueil:index.html.twig');
     }
+    public function challengeAction()
+    {
+        return $this->render('challengeLBundle:Accueil:achat.html.twig');
+    }
+    public function faqAction()
+    {
+        return $this->render('challengeLBundle:Accueil:faq.html.twig');
+    }
+    public function paypalAction()
+    {
+        return $this->render('challengeLBundle:Accueil:paypal.html.twig');
+    }
+    public function virementAction()
+    {
+        return $this->render('challengeLBundle:Accueil:virement.html.twig');
+    }
+    public function youpassAction()
+    {
+        return $this->render('challengeLBundle:Accueil:youpass.html.twig');
+    }
+
 
 }
 
