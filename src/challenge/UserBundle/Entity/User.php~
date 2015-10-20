@@ -1,0 +1,36 @@
+<?php
+
+namespace challenge\UserBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="users")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(name="psn", type="string", length=255)
+     */
+    private $psn;
+
+    /**
+     * @ORM\Column(name="psnpassword", type="string", length=255)
+     */
+    protected $psnpassword;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+}

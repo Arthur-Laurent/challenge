@@ -10,6 +10,7 @@ class navbarController extends Controller
     {
         $user=$this->getUser();
 
+
         return $this->render('challengeUserBundle:navbar:menu.html.twig', array(
             'user'=>$user
              ));

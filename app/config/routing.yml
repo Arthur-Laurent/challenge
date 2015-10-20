@@ -13,4 +13,3 @@ challenge_l:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix: /user
-
