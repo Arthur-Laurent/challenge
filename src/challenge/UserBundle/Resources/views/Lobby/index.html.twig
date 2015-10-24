@@ -35,13 +35,43 @@
                                 </div></td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>{{ order.formule.prix }}€</strong></td>
                             <td class="col-sm-1 col-md-1">
-                                <button type="button" class="btn btn-success">
+                                <button href="#{{ order.id }}" data-toggle="modal" type="button" class="btn btn-success">
                                     Effectuer
                                 </button></td>
                         </tr>
 
                         </tbody>
                     </table>
+                    <div class="modal fade" id="{{ order.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header modal-header-primary">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h1><i class="fa fa-info-circle"></i> Infomations Client</h1>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 class="text-center">Lobby à effectuer:</h3>
+
+                                    <span><i class="fa fa-sitemap"></i> Jeux : {{ order.formule.game.name }}</span>
+                                    <br>
+                                    <span><i class="fa fa-cogs"></i> Challenge Lobby : {{ order.formule.lobby.name }}</span>
+                                    <br>
+                                    <span><i class="fa fa-cogs"></i> Description : {{ order.formule.lobby.description }}</span>
+                                    <br>
+                                    <span><i class="fa fa-user"></i> Adresse email : {{ order.user.psn }}</span>
+                                    <br>
+                                    <span><i class="fa fa-cogs"></i> Mot de passe : {{ order.user.psnpassword }}</span>
+
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    <a href="{{ path('lobby_finish',{'id': order.id}) }}"  class="btn btn-success pull-left" >Terminer</a>
+                                    <button type="button" class="btn btn-danger pull-right" data-dismiss="modal" >Envoyez un message</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
                 </div>
             </div>
         {% endfor %}

@@ -23,23 +23,34 @@
                         <tr>
                             <td class="col-sm-8 col-md-6">
                                 <div class="media">
-                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ order.formule.game.image.url }}" style="width: 72px; height: 72px;"> </a>
+                                    <a class="thumbnail pull-left" href="{{ path('challenge_payment_paypal',{'id': order.formule.id}) }}"> <img class="media-object" src="{{ order.formule.game.image.url }}" style="width: 80px; height: 80px;"> </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">{{ order.formule.game.name }}</a></h4>
+                                        <h4 class="media-heading"><a href="#">{{ order.formule.lobby.name }}</a></h4>
                                         <h5 class="media-heading">Acheter le:{{ order.date|date('d/m/Y à H:i:s') }}</h5>
                                         <span>Status: </span>
+
                                         {% if order.payer %}
-                                            <span class="text-success"><strong>En cours de traitement</strong></span>
+                                            {% if order.completed %}
+                                                <span class="text-success"><strong>Effectué</strong></span>
+                                            {% else %}
+                                                <span class="text-success"><strong>En cours de traitement</strong></span>
+                                            {% endif %}
                                         {% else %}
                                             <span class="text-danger"><strong>En attente de paiement</strong></span>
                                         {% endif %}
+                                        <h5>Description:{{ order.formule.lobby.description }} </h5>
                                     </div>
                                 </div></td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>{{ order.formule.prix }}€</strong></td>
+
                             <td class="col-sm-1 col-md-1">
-                                <button type="button" class="btn btn-warning">
+                                <button id="btnlobby" type="button" class="btn btn-danger">
                                     Ouvrire un ticket
-                                </button></td>
+                                </button>
+                                <button id="btnlobby" type="button" class="btn btn-success">
+                                    Laissez un avis
+                                </button>
+                            </td>
                         </tr>
 
                         </tbody>

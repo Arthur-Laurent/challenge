@@ -5,3 +5,9 @@ user_lobyenattente:
 user_lobby_acheter:
     path:   /Lobbybought
     defaults: { _controller: challengeUserBundle:Lobby:lobbybuy }
+
+lobby_finish:
+    path:   /finish/{id}
+    defaults: { _controller: challengeUserBundle:Lobby:finish }
+    requirements:
+        id: \d+
