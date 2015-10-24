@@ -26,6 +26,15 @@ payum:
                 sandbox: true
 
 
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+
+
 services:
     app.form.registration:
         class: challenge\UserBundle\Form\RegistrationType

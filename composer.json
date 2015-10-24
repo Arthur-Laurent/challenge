@@ -23,7 +23,9 @@
         "twig/extensions": "^1.3",
         "payum/payum-bundle": "^0.15.0",
         "payum/offline": "^0.15.1",
-        "payum/paypal-express-checkout-nvp": "^0.15.1"
+        "payum/paypal-express-checkout-nvp": "^0.15.1",
+        "sonata-project/admin-bundle": "2.3.*",
+        "sonata-project/doctrine-orm-admin-bundle": "2.3.*"
         
 
 

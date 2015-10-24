@@ -26,7 +26,7 @@
                                     <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ order.formule.game.image.url }}" style="width: 72px; height: 72px;"> </a>
                                     <div class="media-body">
                                         <h4 class="media-heading"><a href="#">{{ order.formule.game.name }}</a></h4>
-                                        <h5 class="media-heading">Acheter le:{{ order.date|date('d/m/Y') }}</h5>
+                                        <h5 class="media-heading">Acheter le:{{ order.date|date('d/m/Y à H:i:s') }}</h5>
                                         <span>Status: </span>
                                         {% if order.payer %}
                                             <span class="text-success"><strong>En cours de traitement</strong></span>

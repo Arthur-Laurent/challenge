@@ -10,6 +10,6 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 8ethrsjrtjgncvnyj541hg56f4h5fgnhfj8c7e
-    paypal.express_checkout.username:  laurentarthurcontact-facilitator_api1.gmail.com
-    paypal.express_checkout.password:  DN5BY4LRSGZN7HYK
-    paypal.express_checkout.signature: AFcWxV21C7fd0v3bYYYRCpSSRl31A50YOpqREA.t6tGTngpocFlW7V4-
+    paypal.express_checkout.username:  challengelobbybec-facilitator_api1.gmail.com
+    paypal.express_checkout.password:  LMT3NFSRJKRKJHV3
+    paypal.express_checkout.signature: AxSz.M.QFz0hCnW.PaqNMllxcYX1AbcjBgaJP9CraFreXAsdp5-fjWPZ

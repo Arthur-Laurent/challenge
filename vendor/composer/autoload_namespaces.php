@@ -15,6 +15,7 @@ return array(
     'Payum\\Paypal\\ExpressCheckout\\Nvp' => array($vendorDir . '/payum/paypal-express-checkout-nvp'),
     'Payum\\Offline' => array($vendorDir . '/payum/offline'),
     'Payum\\Core\\' => array($vendorDir . '/payum/core'),
+    'Exporter' => array($vendorDir . '/sonata-project/exporter/lib'),
     'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
