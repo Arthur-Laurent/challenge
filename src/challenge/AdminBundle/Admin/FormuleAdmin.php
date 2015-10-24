@@ -1,6 +1,6 @@
 <?php
 
-namespace challenge\PaymentBundle\Admin;
+namespace challenge\AdminBundle\Admin;
 
 
 use Sonata\AdminBundle\Admin\Admin;

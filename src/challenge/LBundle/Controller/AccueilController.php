@@ -24,7 +24,10 @@ class AccueilController extends Controller
     }
     public function paypalAction()
     {
-        return $this->render('challengeLBundle:Accueil:paypal.html.twig');
+        $formule=$this->getDoctrine()->getManager()->getRepository('challengePaymentBundle:Formule')->getformule();
+        return $this->render('challengeLBundle:Accueil:paypal.html.twig',array(
+            'formules'=>$formule,
+        ));
     }
     public function virementAction()
     {

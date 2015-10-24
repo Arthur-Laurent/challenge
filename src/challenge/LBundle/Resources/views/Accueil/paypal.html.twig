@@ -1,50 +1,36 @@
 {%  extends "challengeLBundle::layout.html.twig" %}
 {% block index %}
     <div class="col-lg-12 text-center">
-        <B>
-            <BR><BR>
 
-            <CENTER><TABLE width=80% border=3>
-                    <TR>
-                        <TD width=25%><center><font color="gold"><BR>Nom du produit<BR>&nbsp;</font></center></TD>
-                        <TD width=25%><center><font color="gold"><BR>Informations<BR>&nbsp;</font></center></TD>
-                        <TD width=25%><center><font color="gold"><BR>Prix<BR>&nbsp;</font></center></TD>
-                        <TD width=25%><center><font color="gold"><BR>S&eacutelectionner<BR>&nbsp;</font></center></TD>
-                    </TR>
-                    <TR>
-                        <TD width=25%><center><BR>Lobby bo2<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>Lobby bo2 & Stats bo2<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>8.84 EUR<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR><a href="{{ path('challenge_payment_paypal',{'id': 1}) }}">Acheter</a>
-                                <BR>&nbsp;</center></TD>
-                    </TR>
-                    <TR>
-                        <TD width=25%><center><BR>Lobby aw<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>Lobby aw & Stats aw<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>8.84 EUR<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR><a href="{{ path('challenge_payment_paypal',{'id': 2}) }}">Acheter</a><BR>&nbsp;</center></TD>
-                    </TR>
-                    <TR>
-                        <TD width=25%><center><BR>Stats bo2<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>Stats bo2<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>3.44 EUR<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5S8SB7FRQ4L68">Acheter</a><BR>&nbsp;</center></TD>
-                    </TR>
-                    <TR>
-                        <TD width=25%><center><BR>Stats aw<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>Stats aw<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>3.44 EUR<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dextahar2%40gmail%2ecom&lc=FR&item_name=Stats%20aw&amount=3%2e44&currency_code=EUR&no_note=0&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">Acheter</a><BR>&nbsp;</center></TD>
-                    </TR>
-                    <TR>
-                        <TD width=25%><center><BR>Premium<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>Tous les lobby !!!<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR>12.84 EUR<BR>&nbsp;</center></TD>
-                        <TD width=25%><center><BR><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dextahar2%40gmail%2ecom&lc=FR&item_name=Stats%20aw&amount=12%2e84&currency_code=EUR&no_note=0&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">Acheter</a><BR>&nbsp;</center></TD>
-                    </TR>
-                </TABLE>
+        <div class="row text-center">
+        {% for formule in formules %}
+            <div class="col-md-3 ">
+                <div class="panel panel-danger panel-pricing">
+                    <div class="panel-heading">
 
-                <center><h1><font color="gold"><B>Important</B></font></h1>
+                        <img  id="img-form" class="media-object" src="{{ formule.game.image.url }}">
+                        <h3 class="text-blue">{{ formule.name }}</h3>
+                    </div>
+
+                    <ul class="list-group text-center">
+                        <li class="list-group-item"><i class="fa fa-sitemap"></i> {{ formule.game.name }}</li>
+                        <li class="list-group-item"><i class="fa fa-cogs"></i> {{ formule.lobby.name }}</li>
+                        <li class="list-group-item"> {{ formule.lobby.description }}</li>
+                    </ul>
+                    <div class="panel-body text-center">
+                        <p><strong>{{ formule.prix }} €</strong></p>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-danger" href="#">Acheter!</a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}</div>
+            <div class="row">
+                <B>
+
+            <h1><font color="gold"><B>Important</B></font></h1>
                     Pour que vos achats soient correctement r&eacutealis&eacutees, merci d'indiquer dans "Objectif"<BR> de la transaction votre adresse email du PSN ainsi que votre mot de passe.
                     <BR>Votre achat vous sera distribuer dans un d&eacutelais de 24 heures maximum !
                     <h1><font color="gold"><B>D&eacutetails de nos produits</B></font></h1>
@@ -57,7 +43,7 @@
                     b&eacuten&eacutefiques durant les parties.
                     <BR><BR>
                     -Le pack Premium contient les lobby black ops 2, advanced warfare, ainsi que les statistiques black ops 2 et advanced warfare !
-
-</B>
+            </div>
+        </B>
     </div>
 {% endblock %}

@@ -1,4 +1,9 @@
-<li><a href="{{ path('fos_user_security_logout') }}" class="btn   btn-danger navbar-btn" >Deconnexion</a></li>
+<li>
+
+        <a href="{{ path('fos_user_security_logout') }}" class="btn   btn-danger navbar-btn" ><i class="fa fa-lock fa-lg"></i>  Deconnexion</a>
+
+</li>
+
 <li>
     <div class="btn-group">
         <a href="{{ path('fos_user_profile_show') }}" class="btn btn-info ">Mon compte</a>
@@ -9,8 +14,8 @@
             <li><a href="{{ path('user_lobby_acheter') }}"><span class="glyphicon glyphicon-screenshot"></span> Mes derniers lobby</a></li>
             <li><a href="#"><i class="fa fa-envelope-o"></i> Mes messages</a></li>
             {% if is_granted('ROLE_ADMIN') %}
-                <li><a href="{{ path('user_lobyenattente') }}"><span class="glyphicon glyphicon-screenshot"></span>Lobby en attente <span class="badge">{{ lobbyenattente }}</span></a></li>
-                <li><a href="{{ path('sonata_admin_redirect') }}"><span class="glyphicon glyphicon-screenshot"></span>Panel d'administration</a></li>
+                <li><a href="{{ path('user_lobyenattente') }}"><i class="fa fa-cart-arrow-down"></i> Lobby en attente <span class="badge">{{ lobbyenattente }}</span></a></li>
+                <li><a href="{{ path('sonata_admin_redirect') }}"><i class="fa fa-server"></i> Panel d'administration</a></li>
             {% else %}
             {% endif %}
 

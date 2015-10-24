@@ -1,6 +1,6 @@
 <?php
 
-namespace challenge\PaymentBundle\Admin;
+namespace challenge\AdminBundle\Admin;
 
 
 use Sonata\AdminBundle\Admin\Admin;
@@ -9,23 +9,23 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use challenge\PaymentBundle\Entity\Lobby;
 
-class ImageAdmin extends Admin
+class LobbyAdmin extends Admin
 {
 protected function configureFormFields(FormMapper $formMapper)
 {
-$formMapper->add('url')
-            ->add('alt');
+$formMapper->add('name','text',array('label'=>'Nom'))
+            ->add('description');
 }
 
 protected function configureDatagridFilters(DatagridMapper $datagridMapper)
 {
-$datagridMapper->add('alt');
+$datagridMapper->add('name');
 }
 
 protected function configureListFields(ListMapper $listMapper)
 {
-$listMapper->addIdentifier('alt')
-
+$listMapper->addIdentifier('name',null,array('label'=>'Nom'))
+            ->addIdentifier('description')
 ;
 }
 }

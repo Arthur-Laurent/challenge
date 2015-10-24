@@ -44,9 +44,9 @@
                             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                                 {{ render(controller("challengeUserBundle:navbar:menu")) }}
                             {% else %}
-                                <li><a href="{{ path('fos_user_registration_register') }}" class="btn btn-danger navbar-btn" >S'inscrire</a></li>
+                                <li><a href="{{ path('fos_user_registration_register') }}" class="btn btn-danger navbar-btn" > <i class="fa fa-user-plus"></i>  S'inscrire</a></li>
 
-                                <li><a type="button" href="{{ path('fos_user_security_login') }}" class="btn btn-success navbar-btn btn-circle">Login</a></li>
+                                <li><a type="button" href="{{ path('fos_user_security_login') }}" class="btn btn-success navbar-btn btn-circle"><i class="fa fa-unlock fa-lg"> </i>  Login</a></li>
                             {% endif %}
 
 
@@ -88,7 +88,7 @@
                     </li>
                     <li class="sub-menu">
                         <a href="{{ path('challenge_l_faq')  }}" class="">
-                            <i class="fa fa-cogs"></i>
+                            <i class="fa fa-info"></i>
                             <span>FAQ</span>
 
                         </a>
@@ -121,20 +121,17 @@
 
                     </div>
 
-                    <div class="col-lg-2 col-lg-offset-1">
-                        <h2>Notre entrepôt</h2>
-                        <p><i class="icon-map-marker"></i>&nbsp;</p>
-                    </div>
 
-                    <div class="col-lg-2 col-lg-offset-1 ">
+
+                    <div class="col-lg-2 col-lg-offset-6 ">
                         <h2>Nous contacter</h2>
                         <p><i class="icon-phone"></i>&nbsp;Tel:0605080851 </p>
                         <p><i class="icon-print"></i>&nbsp;Fax:5121550515 </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4">
-                        <p>&copy; Copyright {{ "now"|date('Y') }} - Arthur</p>
+                    <div class="col-lg-4 col-lg-offset-1">
+                        <p>&copy; Copyright {{ "now"|date('Y') }} - Arthur et Tahar</p>
                     </div>
                 </div>
             </div>
