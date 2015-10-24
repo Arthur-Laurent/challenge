@@ -10,6 +10,7 @@
             <li><a href="#"><i class="fa fa-envelope-o"></i> Mes messages</a></li>
             {% if is_granted('ROLE_ADMIN') %}
                 <li><a href="{{ path('user_lobyenattente') }}"><span class="glyphicon glyphicon-screenshot"></span>Lobby en attente <span class="badge">{{ lobbyenattente }}</span></a></li>
+                <li><a href="{{ path('sonata_admin_redirect') }}"><span class="glyphicon glyphicon-screenshot"></span>Panel d'administration</a></li>
             {% else %}
             {% endif %}
 

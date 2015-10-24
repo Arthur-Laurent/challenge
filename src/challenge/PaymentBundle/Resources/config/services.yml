@@ -2,3 +2,37 @@ services:
 #    challenge_payment.example:
 #        class: challenge\PaymentBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+services:
+    sonata.admin.lobby:
+        class: challenge\PaymentBundle\Admin\LobbyAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Challenge Lobby", label: "Lobby" }
+        arguments:
+            - ~
+            - challenge\PaymentBundle\Entity\Lobby
+            - ~
+    sonata.admin.jeux:
+        class: challenge\PaymentBundle\Admin\GameAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Challenge Lobby", label: "Jeux" }
+        arguments:
+            - ~
+            - challenge\PaymentBundle\Entity\Game
+            - ~
+            - ~
+    sonata.admin.formule:
+        class: challenge\PaymentBundle\Admin\FormuleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Challenge Lobby", label: "Formule" }
+        arguments:
+            - ~
+            - challenge\PaymentBundle\Entity\Formule
+            - ~
+    sonata.admin.img:
+        class: challenge\PaymentBundle\Admin\ImageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Challenge Lobby", label: "Image" }
+        arguments:
+            - ~
+            - challenge\PaymentBundle\Entity\Image
+            - ~

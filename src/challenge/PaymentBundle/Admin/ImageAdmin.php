@@ -9,23 +9,23 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use challenge\PaymentBundle\Entity\Lobby;
 
-class LobbyAdmin extends Admin
+class ImageAdmin extends Admin
 {
 protected function configureFormFields(FormMapper $formMapper)
 {
-$formMapper->add('name','text',array('label'=>'Nom'))
-            ->add('description');
+$formMapper->add('url')
+            ->add('alt');
 }
 
 protected function configureDatagridFilters(DatagridMapper $datagridMapper)
 {
-$datagridMapper->add('name');
+$datagridMapper->add('alt');
 }
 
 protected function configureListFields(ListMapper $listMapper)
 {
-$listMapper->addIdentifier('name',null,array('label'=>'Nom'))
-            ->addIdentifier('description')
+$listMapper->addIdentifier('alt')
+
 ;
 }
 }

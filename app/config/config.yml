@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-
+    - { resource: "@challengePaymentBundle/Resources/config/services.yml" }
 
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -30,8 +30,8 @@ sonata_block:
     default_contexts: [cms]
     blocks:
 
-        sonata.admin.block.admin_list:
-            contexts: [admin]
+       sonata.admin.block.admin_list:
+            contexts:   [admin]
 
 
 
