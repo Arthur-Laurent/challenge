@@ -1,0 +1,11 @@
+challenge_payment_paypal:
+    path:     /paypal/{id}
+    defaults: { _controller: challengePaymentBundle:Payment:preparePaypalExpressCheckoutPayment }
+    requirements:
+            id: \d+
+
+payment_done:
+    path:   /payed
+    defaults: { _controller: challengePaymentBundle:Payment:done }
+
+

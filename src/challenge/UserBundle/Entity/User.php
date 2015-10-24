@@ -19,9 +19,23 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="challenge\PaymentBundle\Entity\Orders", mappedBy="user")
+     */
+
+    private $orders;
+
+    /**
      * @ORM\Column(name="psn", type="string", length=255)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $psn;
+
+    /**
+     * @ORM\Column(name="signup_at",type="datetime")
+     */
+
+    private $signup_at;
+
 
     /**
      * @ORM\Column(name="psnpassword", type="string", length=255)
@@ -31,7 +45,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->signup_at=new \DateTime();
     }
 
     /**
@@ -80,5 +94,63 @@ class User extends BaseUser
     public function getPsnpassword()
     {
         return $this->psnpassword;
+    }
+
+    /**
+     * Add order
+     *
+     * @param \challenge\PaymentBundle\Entity\Orders $order
+     *
+     * @return User
+     */
+    public function addOrder(\challenge\PaymentBundle\Entity\Orders $order)
+    {
+        $this->orders[] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Remove order
+     *
+     * @param \challenge\PaymentBundle\Entity\Orders $order
+     */
+    public function removeOrder(\challenge\PaymentBundle\Entity\Orders $order)
+    {
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+
+    /**
+     * Set signupAt
+     *
+     * @param \DateTime $signupAt
+     *
+     * @return User
+     */
+    public function setSignupAt($signupAt)
+    {
+        $this->signup_at = $signupAt;
+
+        return $this;
+    }
+
+    /**
+     * Get signupAt
+     *
+     * @return \DateTime
+     */
+    public function getSignupAt()
+    {
+        return $this->signup_at;
     }
 }

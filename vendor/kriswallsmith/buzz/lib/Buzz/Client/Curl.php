@@ -17,6 +17,8 @@ class Curl extends AbstractCurl
             curl_close($this->lastCurl);
         }
 
+        $options[CURLOPT_SSL_VERIFYPEER]=false;
+
         $this->lastCurl = static::createCurlHandle();
         $this->prepare($this->lastCurl, $request, $options);
 

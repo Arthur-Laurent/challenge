@@ -6,10 +6,10 @@
         <ul class="dropdown-menu">
             <li class="dropdown-header">Mon compte</li>
             <li><a href="{{ path('fos_user_profile_edit') }}"><span class="glyphicon glyphicon-user"></span> Paramètres</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span> Mes derniers lobby</a></li>
+            <li><a href="{{ path('user_lobby_acheter') }}"><span class="glyphicon glyphicon-screenshot"></span> Mes derniers lobby</a></li>
             <li><a href="#"><i class="fa fa-envelope-o"></i> Mes messages</a></li>
             {% if is_granted('ROLE_ADMIN') %}
-                <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>Lobby en attente</a></li>
+                <li><a href="{{ path('user_lobyenattente') }}"><span class="glyphicon glyphicon-screenshot"></span>Lobby en attente {{ lobbyenattente }}</a></li>
             {% else %}
             {% endif %}
 

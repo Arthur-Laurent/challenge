@@ -8,7 +8,7 @@ challenge_l_faq:
     path:     /faq
     defaults: { _controller: challengeLBundle:Accueil:faq }
 challenge_l_pp:
-        path:     /paypal
+        path:     /paypalindex
         defaults: { _controller: challengeLBundle:Accueil:paypal }
 challenge_l_virement:
         path:     /virement

@@ -1,0 +1,49 @@
+{%  extends "::layout.html.twig" %}
+{% block header %}
+    <div id="headerm" class="jumbotron">
+        <h1 class="control-label">Challenge Lobby à effectuer</h1>
+    </div>
+
+{% endblock %}
+{% block body %}
+    <div class="row">
+
+        {% for order in orders  %}
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>{{ order.formule.name }}</th>
+                            <th class="text-center">Prix</th>
+                            <th> </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ order.formule.game.image.url }}" style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">{{ order.formule.game.name }}</a></h4>
+                                        <h5 class="media-heading">Acheter le:{{ order.date|date('d/m/Y') }}</h5>
+                                        <span>Utilisateur: </span>
+
+                                            <span class="text-success"><strong>{{ order.user.username }}</strong></span>
+
+                                    </div>
+                                </div></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>{{ order.formule.prix }}€</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-success">
+                                    Effectuer
+                                </button></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -9,10 +9,11 @@ class navbarController extends Controller
     public function menuAction()
     {
         $user=$this->getUser();
-
+        $lobbynotcompleted=$this->getDoctrine()->getManager()->getRepository('challengePaymentBundle:Orders')->getNLobby();
 
         return $this->render('challengeUserBundle:navbar:menu.html.twig', array(
-            'user'=>$user
+            'user'=>$user,
+            'lobbyenattente'=>$lobbynotcompleted
              ));
     }
 }

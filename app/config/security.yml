@@ -37,6 +37,7 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/news, role:  IS_AUTHENTICATED_REMEMBERED }
         - { path: ^/$, role:  IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/payment, role:  IS_AUTHENTICATED_REMEMBERED }
 
 
 

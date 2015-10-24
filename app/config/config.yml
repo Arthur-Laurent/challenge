@@ -9,6 +9,22 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+payum:
+    security:
+        token_storage:
+            challenge\PaymentBundle\Entity\PaymentToken: { doctrine: orm }
+
+    storages:
+        challenge\PaymentBundle\Entity\Orders: { doctrine: orm }
+
+    gateways:
+        paypal_payment:
+            paypal_express_checkout_nvp:
+                username:  %paypal.express_checkout.username%
+                password:  %paypal.express_checkout.password%
+                signature: %paypal.express_checkout.signature%
+                sandbox: true
+
 
 services:
     app.form.registration:
