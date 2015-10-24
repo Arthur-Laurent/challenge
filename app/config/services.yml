@@ -14,3 +14,9 @@ services:
        tags:
            - { name: twig.extension }
 
+services:
+    admin.lobby:
+        class: challengePaymentBundle\Admin\LobbyAdmin
+        arguments: [~, challengePaymentBundle\Entity\Lobby, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Lobby }
