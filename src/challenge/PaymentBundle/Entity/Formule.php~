@@ -169,37 +169,39 @@ class Formule
         $this->formule = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+
     /**
-     * Add formule
+     * Add order
      *
-     * @param \challenge\PaymentBundle\Entity\Orders $formule
+     * @param \challenge\PaymentBundle\Entity\Orders $order
      *
      * @return Formule
      */
-    public function addFormule(\challenge\PaymentBundle\Entity\Orders $formule)
+    public function addOrder(\challenge\PaymentBundle\Entity\Orders $order)
     {
-        $this->formule[] = $formule;
+        $this->orders[] = $order;
 
         return $this;
     }
 
     /**
-     * Remove formule
+     * Remove order
      *
-     * @param \challenge\PaymentBundle\Entity\Orders $formule
+     * @param \challenge\PaymentBundle\Entity\Orders $order
      */
-    public function removeFormule(\challenge\PaymentBundle\Entity\Orders $formule)
+    public function removeOrder(\challenge\PaymentBundle\Entity\Orders $order)
     {
-        $this->formule->removeElement($formule);
+        $this->orders->removeElement($order);
     }
 
     /**
-     * Get formule
+     * Get orders
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getFormule()
+    public function getOrders()
     {
-        return $this->formule;
+        return $this->orders;
     }
 }

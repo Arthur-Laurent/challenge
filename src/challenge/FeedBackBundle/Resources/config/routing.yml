@@ -1,0 +1,8 @@
+challenge_feed_back_index:
+    path:     /feedback
+    defaults: { _controller: challengeFeedBackBundle:feedback:index }
+challenge_feed_back_add:
+    path:   /feedback/add/{id}
+    defaults: { _controller: challengeFeedBackBundle:feedback:add }
+    requirements:
+        id: \d+

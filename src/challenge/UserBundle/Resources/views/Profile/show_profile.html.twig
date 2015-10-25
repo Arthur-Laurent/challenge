@@ -1,9 +1,15 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{% extends "FOSUserBundle::layout.html.twig" %}
 
+{% block header %}
+    <div id="headerm" class="jumbotron">
+        <h1 class="control-label">Profile {{ user.username }}</h1>
+    </div>
 
-
-    <div class="col-lg-8">
-                <div class="row">
+{% endblock %}
+{% block fos_user_content %}
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <div class="row">
 
 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8  toppad" >
@@ -20,9 +26,7 @@
                                 {{ asset(user.image.webPath) }}
                                 {% else %}
                                 https://ssl.gstatic.com/accounts/ui/avatar_2x.png
-                                {% endif %}
-
-                                " class="img-responsive"> </div>
+                                {% endif %}" class="img-responsive"> </div>
 
                                 <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                                   <dl>
@@ -71,7 +75,7 @@
                         <div class="panel-footer">
                             <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                             {% if is_granted('ROLE_ADMIN') %}
-                        <span class="pull-right">
+                                <span class="pull-right">
                             <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                             <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
                         </span>
@@ -80,6 +84,7 @@
 
                     </div>
                 </div>
-                </div>
             </div>
-
+        </div>
+    </div>
+{% endblock fos_user_content %}

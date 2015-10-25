@@ -9,8 +9,10 @@ class ProfileType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('psn','email')
-                ->add('psnpassword','password');
+        $builder->add('ppsn','text',array('required'=>false))
+                ->add('psn','email',array('required'=>false))
+                ->add('psnpassword','password',array('required'=>false))
+                ->add('image',new ImageType(),array('required'=>false));
 
     }
 

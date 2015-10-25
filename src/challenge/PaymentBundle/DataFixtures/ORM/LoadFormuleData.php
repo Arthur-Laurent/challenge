@@ -40,7 +40,7 @@ class LoadFormuleData implements FixtureInterface
 
         $image1=new Image();
         $image1->setAlt('Imageaw');
-        $image1->setUrl('http://img.ozgameshop.com/posters/video_game_posters/call_of_duty_black_ops_ii_cover_mini_poster_raw.jpg');
+        $image1->setUrl('http://image.jeuxvideo.com/images-md/pc/c/a/call-of-duty-advanced-warfare-pc-00d.jpg');
         $game1=new Game();
         $game1->setName('Call of duty advanced warfare');
         $game1->setImage($image1);

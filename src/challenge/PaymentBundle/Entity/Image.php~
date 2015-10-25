@@ -41,6 +41,14 @@ class Image
     private $game;
 
     /**
+     *@ORM\OneToOne(targetEntity="challenge\UserBundle\EntityUser",mappedBy="image", cascade={"persist"})
+     * 
+     */
+    private $user;
+
+    private $file;
+
+    /**
      * Get id
      *
      * @return integer

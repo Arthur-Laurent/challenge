@@ -168,4 +168,38 @@ class Lobby
     {
         $this->orders->removeElement($order);
     }
+
+    /**
+     * Add formule
+     *
+     * @param \challenge\PaymentBundle\Entity\Formule $formule
+     *
+     * @return Lobby
+     */
+    public function addFormule(\challenge\PaymentBundle\Entity\Formule $formule)
+    {
+        $this->formule[] = $formule;
+
+        return $this;
+    }
+
+    /**
+     * Remove formule
+     *
+     * @param \challenge\PaymentBundle\Entity\Formule $formule
+     */
+    public function removeFormule(\challenge\PaymentBundle\Entity\Formule $formule)
+    {
+        $this->formule->removeElement($formule);
+    }
+
+    /**
+     * Get formule
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormule()
+    {
+        return $this->formule;
+    }
 }

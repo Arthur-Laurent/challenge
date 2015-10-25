@@ -1,3 +1,7 @@
+challenge_feed_back:
+    resource: "@challengeFeedBackBundle/Resources/config/routing.yml"
+    prefix:   /
+
 challenge_admin:
     resource: "@challengeAdminBundle/Resources/config/routing.yml"
     prefix:   /

@@ -9,7 +9,8 @@ class RegistrationType extends AbstractType
 {
 public function buildForm(FormBuilderInterface $builder, array $options)
 {
-$builder->add('psn','email')
+$builder->add('ppsn','text')
+        ->add('psn','email')
         ->add('psnpassword','password');
 
 }

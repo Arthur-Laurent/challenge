@@ -11,3 +11,9 @@ lobby_finish:
     defaults: { _controller: challengeUserBundle:Lobby:finish }
     requirements:
         id: \d+
+
+user_show_profile:
+    path:   /user/profile/{id}
+    defaults: { _controller: challengeUserBundle:User:show }
+    requirements:
+        id: \d+

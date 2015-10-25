@@ -4,10 +4,12 @@ namespace challenge\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ *  @ORM\Entity(repositoryClass="challenge\UserBundle\Entity\UserRepository")
  * @ORM\Table(name="users")
+ *
  */
 class User extends BaseUser
 {
@@ -31,6 +33,12 @@ class User extends BaseUser
     private $psn;
 
     /**
+     * @ORM\Column(name="ppsn", type="string", length=255)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $ppsn;
+
+    /**
      * @ORM\Column(name="signup_at",type="datetime")
      */
 
@@ -41,6 +49,14 @@ class User extends BaseUser
      * @ORM\Column(name="psnpassword", type="string", length=255)
      */
     protected $psnpassword;
+
+    /**
+     * @ORM\OneToOne(targetEntity="challenge\PaymentBundle\Entity\Image", inversedBy="user",cascade={"persist"})
+     *
+     */
+
+
+    protected $image;
 
     public function __construct()
     {
@@ -152,5 +168,29 @@ class User extends BaseUser
     public function getSignupAt()
     {
         return $this->signup_at;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \challenge\PaymentBundle\Entity\Image $image
+     *
+     * @return User
+     */
+    public function setImage(\challenge\PaymentBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+        $image->setUser($this);
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \challenge\PaymentBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

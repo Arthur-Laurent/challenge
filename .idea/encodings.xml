@@ -4,14 +4,20 @@
     <file url="file://$USER_HOME$/Desktop/parameters.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/config/parameters.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/FeedBackBundle/Controller/feedbackController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/FeedBackBundle/Resources/views/Comments/comments.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/FeedBackBundle/Resources/views/layout.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/LBundle/Resources/views/Accueil/achat.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/LBundle/Resources/views/Accueil/faq.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/LBundle/Resources/views/Accueil/index.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/LBundle/Resources/views/Accueil/paypal.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Controller/UserController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/DataFixtures/ORM/LoadUserData.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Lobby/index.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Lobby/lobby.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Profile/edit_content.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Profile/show_content.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Profile/show_profile.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Registration/confirmed.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Resetting/request.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/challenge/UserBundle/Resources/views/Security/login.html.twig" charset="UTF-8" />

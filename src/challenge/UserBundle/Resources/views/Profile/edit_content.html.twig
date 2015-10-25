@@ -42,7 +42,28 @@
             <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
         </div>
     {% endif %}
-    {{ form_label(form.psn,'Email psn',{ 'label_attr' :{'class':'control-label'}}) }}
+    {{ form_label(form.ppsn,'Pseudo psn',{ 'label_attr' :{'class':'control-label'}}) }}
+    {% if form_errors(form.ppsn) is empty %}
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                {{ form_widget(form.ppsn,{ 'attr' :{'class':'form-control'}}) }}
+            </div>
+        </div>
+    {% else %}
+        {{ form_errors(form.ppsn) }}
+        <div class="form-group has-error has-feedback ">
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                {{ form_widget(form.ppsn,{ 'attr' :{'class':'form-control'}}) }}
+            </div>
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        </div>
+    {% endif %}
+    {{ form_label(form.psn,'Adresse email psn',{ 'label_attr' :{'class':'control-label'}}) }}
     {% if form_errors(form.psn) is empty %}
         <div class="form-group">
             <div class="input-group">
@@ -107,6 +128,38 @@
         </div>
 
     {% endif %}
+    {{ form_label(form.image,"Image de profile:",{ 'label_attr' :{'class':'control-label'}}) }}
+    {% if form_errors(form.image) is empty %}
+        <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Ouvrire {{ form_widget(form.image) }}
+                    </span>
+                </span>
+            <input type="text" class="form-control" readonly>
+        </div>
+        <span class="help-block">
+                Try selecting one or more files and watch the feedback
+            </span>
+    {% else %}
+        {{ form_errors(form.image) }}
+        <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" multiple>
+                    </span>
+                </span>
+            <input type="text" class="form-control" readonly>
+        </div>
+        <span class="help-block">
+                Try selecting one or more files and watch the feedback
+            </span>
+
+    {% endif %}
+
+
+
+
     {{ form_rest(form) }}
     <div class="row">
         <div class="col-lg-2"></div>

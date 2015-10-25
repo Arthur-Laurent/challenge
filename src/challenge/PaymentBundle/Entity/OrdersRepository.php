@@ -62,5 +62,26 @@ class OrdersRepository extends EntityRepository
 
         return $query;
     }
+    public function getOrders()
+    {
+
+        $query = $this->createQueryBuilder('o')
+            ->where('o.payer = true')
+            ->andWhere('o.completed = true')
+            ->andWhere('o.cancomment = false')
+            ->leftJoin('o.user','u')
+            ->leftJoin('o.avis','a')
+            ->leftJoin('o.formule','f')
+            ->addselect('u')
+            ->addSelect('f')
+            ->addSelect('a')
+            ->getQuery()
+            ->getResult();
+
+
+
+
+        return $query;
+    }
 
 }

@@ -30,6 +30,7 @@ class AppKernel extends Kernel
 
 ,
             new challenge\AdminBundle\challengeAdminBundle(),
+            new challenge\FeedBackBundle\challengeFeedBackBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

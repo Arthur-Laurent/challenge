@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;" class="">
+                        <a href="{{ path('challenge_feed_back_index') }}" class="">
                             <i class="fa fa-desktop"></i>
                             <span>Livre d'or</span>
                         </a>
@@ -110,7 +110,7 @@
 
                         {% endblock %}
                 </div>
-
+</div>
             </section>
         </section>
         <div class="footer" id="footer">
@@ -151,6 +151,7 @@
 {% block javascripts %}
     <script src="{{ asset("js/jquery-1.11.3.min .js") }}"></script>
     <script src="{{ asset("js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("js/image.js") }}"></script>
     <script>   jQuery('.toggle-nav').click(function () {
             if (jQuery('#sidebar > ul').is(":visible") === true) {
                 jQuery('#main-content').css({

@@ -2,8 +2,12 @@
 
 namespace challenge\UserBundle\Controller;
 
+use challenge\FeedBackBundle\Entity\Avis;
+use challenge\FeedBackBundle\Form\AvisType;
 use challenge\PaymentBundle\Entity\Orders;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class LobbyController extends Controller
 {
@@ -30,6 +34,7 @@ class LobbyController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $orders->setCompleted(true);
+        $orders->setCancomment(true);
         $em->flush();
         $lobby=$this->getDoctrine()->getManager()->getRepository('challengePaymentBundle:Orders')->getLobby();
 
@@ -37,4 +42,5 @@ class LobbyController extends Controller
             'orders'=>$lobby
         ));
     }
+
 }

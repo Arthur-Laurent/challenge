@@ -47,9 +47,11 @@
                                 <button id="btnlobby" type="button" class="btn btn-danger">
                                     Ouvrire un ticket
                                 </button>
-                                <button id="btnlobby" type="button" class="btn btn-success">
+                                {% if order.cancomment %}
+                                <a href="{{ path('challenge_feed_back_add',{'id': order.id}) }}" id="btnlobby" type="button" class="btn btn-success">
                                     Laissez un avis
-                                </button>
+                                </a>
+                                    {% endif %}
                             </td>
                         </tr>
 

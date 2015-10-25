@@ -1,0 +1,72 @@
+{%  extends "challengeFeedBackBundle::layout.html.twig"  %}
+
+{% block form %}
+    {% if order.cancomment %}
+        <div class="col-lg-4 col-lg-offset-4">
+            {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
+            {{ form_label(form.title,"Titre :",{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.title) is empty %}
+                <div class="form-group ">
+
+
+                    {{ form_widget(form.title,{ 'attr' :{'class':'form-control'}}) }}
+
+                </div>
+            {% else %}
+                {{ form_errors(form.title) }}
+                <div class="form-group has-error has-feedback ">
+
+
+
+                    {{ form_widget(form.title,{ 'attr' :{'class':'form-control'}}) }}
+
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+            {{ form_label(form.content,'Votre avis :',{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.content) is empty %}
+                <div class="form-group">
+
+
+
+                    {{ form_widget(form.content,{ 'attr' :{'class':'form-control'}}) }}
+
+                </div>
+            {% else %}
+                {{ form_errors(form.content) }}
+                <div class="form-group has-error has-feedback ">
+
+
+
+
+                    {{ form_widget(form.content,{ 'attr' :{'class':'form-control'}}) }}
+
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+
+            {{ form_rest(form) }}
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <button class="btn-success btn btn-lg" type="submit" ><i class="fa fa-bolt"></i>  Postez mon avisr</button>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+            </div>
+
+            {{ form_end(form) }}
+
+
+
+
+
+
+
+        </div>
+
+
+
+    {% endif %}
+{% endblock %}

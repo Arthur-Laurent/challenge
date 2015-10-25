@@ -53,6 +53,18 @@ class Orders extends BaseModel
      * @ORM\Column(name="payer", type="boolean")
      */
     protected $payer;
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="cancomment", type="boolean")
+     */
+    protected $cancomment;
+
+    /**
+     * @ORM\OneToOne(targetEntity="challenge\FeedBackBundle\Entity\Avis",inversedBy="orders", cascade={"persist"}))
+     */
+
+    protected $avis;
 
 
     /**
@@ -91,6 +103,7 @@ class Orders extends BaseModel
         $this->date = new \Datetime();
         $this->completed=false;
         $this->payer=false;
+        $this->setCancomment(false);
 
     }
 
@@ -322,5 +335,53 @@ class Orders extends BaseModel
     public function getFormule()
     {
         return $this->formule;
+    }
+
+    /**
+     * Set avis
+     *
+     * @param \challenge\PaymentBundle\Entity\Avis $avis
+     *
+     * @return Orders
+     */
+    public function setAvis(\challenge\FeedBackBundle\Entity\Avis $avis = null)
+    {
+        $this->avis = $avis;
+        $avis->setOrders($this);
+        return $this;
+    }
+
+    /**
+     * Get avis
+     *
+     * @return \challenge\PaymentBundle\Entity\Avis
+     */
+    public function getAvis()
+    {
+        return $this->avis;
+    }
+
+    /**
+     * Set cancomment
+     *
+     * @param boolean $cancomment
+     *
+     * @return Orders
+     */
+    public function setCancomment($cancomment)
+    {
+        $this->cancomment = $cancomment;
+
+        return $this;
+    }
+
+    /**
+     * Get cancomment
+     *
+     * @return boolean
+     */
+    public function getCancomment()
+    {
+        return $this->cancomment;
     }
 }

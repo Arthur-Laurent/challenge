@@ -79,11 +79,30 @@
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                 </div>
             {% endif %}
-            {{ form_label(form.psn,"Pseudo Psn",{ 'label_attr' :{'class':'control-label'}}) }}
-            {% if form_errors(form.psn) is empty %}
+            {{ form_label(form.ppsn,"Pseudo Psn",{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.ppsn) is empty %}
                 <div class="form-group ">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        {{ form_widget(form.ppsn,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                </div>
+            {% else %}
+                {{ form_errors(form.ppsn) }}
+                <div class="form-group has-error has-feedback ">
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        {{ form_widget(form.ppsn,{ 'attr' :{'class':'form-control'}}) }}
+                    </div>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+            {{ form_label(form.psn,"Adresse email Psn",{ 'label_attr' :{'class':'control-label'}}) }}
+            {% if form_errors(form.psn) is empty %}
+                <div class="form-group ">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
                         {{ form_widget(form.psn,{ 'attr' :{'class':'form-control'}}) }}
                     </div>
                 </div>
@@ -92,7 +111,7 @@
                 <div class="form-group has-error has-feedback ">
 
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <span class="input-group-addon">@</span>
                         {{ form_widget(form.psn,{ 'attr' :{'class':'form-control'}}) }}
                     </div>
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
